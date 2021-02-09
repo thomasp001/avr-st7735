@@ -33,8 +33,10 @@ LDFLAGS = -mmcu=$(AVRMCU) -Wl,--gc-sections
 
 ARFLAGS = -rc
 
-all: start $(OBJDIR)/$(AVRMCU)/$(TARGET).hex $(OBJDIR)/$(AVRMCU)/$(LIB_TARGET).a size
+all: start $(OBJDIR)/$(AVRMCU)/$(TARGET).hex size
 	@echo ":: Done !"
+
+lib: $(OBJDIR)/$(AVRMCU)/$(LIB_TARGET).a
 
 start:
 	@echo "ST7735 for AVR $(VERSION)"
